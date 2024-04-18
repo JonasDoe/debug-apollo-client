@@ -1,9 +1,10 @@
-import {NextSSRInMemoryCache} from '@apollo/experimental-nextjs-app-support/ssr';
+import {ReactNode} from "react";
 
-export default function RootLayout() {
+export default function RootLayout({ children }: { children: ReactNode }) {
+    console.log('Rendering RootLayout'); // Will be logged on server
     return (
         <html>
-        <body>{typeof NextSSRInMemoryCache}</body>
+        <body>{children}</body>
         </html>
     );
 }
